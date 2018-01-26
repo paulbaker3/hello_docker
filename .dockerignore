@@ -1,0 +1,12 @@
+# macOS artifacts
+.DS_Store
+
+# IntelliJ / Rubymine artifacts
+.idea
+
+# Project Files
+.git
+log
+postman
+tmp
+db/sqlite3

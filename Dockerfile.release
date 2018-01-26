@@ -1,0 +1,23 @@
+# Production-Build Configuration
+
+FROM ruby:2.4.2
+MAINTAINER Keith Beckman
+
+RUN git config --global http.sslVerify false
+RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+
+WORKDIR /tmp
+ADD Gemfile /tmp/Gemfile
+ADD Gemfile.lock /tmp/Gemfile.lock
+RUN gem install bundler
+RUN bundle install --system --jobs 10
+
+ENV RAILS_ENV=development
+ENV INSTALL_PATH=/opt/test_api
+
+WORKDIR $INSTALL_PATH
+COPY . $INSTALL_PATH
+
+VOLUME /opt/test_api/db/sqlite
+
+CMD ["./Dockerfile.release_startup.sh"]
