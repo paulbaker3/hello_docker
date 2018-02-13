@@ -1,5 +1,6 @@
 # Production-Build Configuration
 
+# Default pulls from hub.docker.com
 FROM ruby:2.4.2
 MAINTAINER Keith Beckman
 
@@ -10,6 +11,8 @@ WORKDIR /tmp
 ADD Gemfile /tmp/Gemfile
 ADD Gemfile.lock /tmp/Gemfile.lock
 RUN gem install bundler
+# --system => bundle install globally
+# --jobs 10 => install 10 gems at a time
 RUN bundle install --system --jobs 10
 
 ENV RAILS_ENV=development
