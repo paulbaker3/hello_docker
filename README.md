@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a stripped down Rails API for the purposes of working with Docker tools. It was presented by Keith Beckman on 2018.02.11 as part of a virtual meetup.
 
-Things you may want to cover:
+My notes from that meetup have been copied below. The latest version can be found in [my notational velocity repo](https://github.com/paulbaker3/notational_notes/blob/master/No%20Noobs%20Meetup%20Notes.md)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The code was forked from github.com/kbeckman/test_api
